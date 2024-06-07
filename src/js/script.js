@@ -1,4 +1,6 @@
-function calcularIPTU() {
+function calcularIPTU(event) {
+    event.preventDefault();
+
     var valorTotal = parseFloat(document.getElementById("valorTotal").value);
     var mesesFaltantes = parseInt(document.getElementById("mesesFaltantes").value);
 
@@ -10,5 +12,5 @@ function calcularIPTU() {
     var iptuMensal = valorTotal / 12;
     var valorDevido = iptuMensal * mesesFaltantes;
 
-    document.getElementById("resultado").innerHTML = "Valor total devido: " + `<strong>R$ ${valorDevido.toFixed(2)}</strong>`;
+    document.getElementById("resultado").innerHTML = "Resultado final: " + `<strong>R$ ${valorDevido.toFixed(2)}</strong>`;
 }

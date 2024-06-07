@@ -5,33 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de IPTU</title>
-    <link rel="stylesheet" href="src/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <div class="container">
-        <h2>Calculadora de IPTU</h2>
-        <label for="valorTotal">Valor Total do IPTU:</label>
-        <input type="number" id="valorTotal" placeholder="Digite o valor total">
-        <label for="mesesFaltantes">Meses Faltantes:</label>
-        <input type="number" id="mesesFaltantes" placeholder="Digite a quantidade de meses faltantes">
-        <button onclick="calcularIPTU()" id="calculateButton">Calcular</button>
-        <div id="resultado"></div>
-        <div class="anotations">
-            <textarea placeholder="Anotações"></textarea>
+<body class="bg-gray-200 mx-auto max-w-7xl px-4 md:px-0">
+    <form class="mx-auto max-w-xl mt-12 border border-slate-200 rounded-md p-6 bg-gray-100 shadow-md shadow-gray-400">
+        <h2 class="text-2xl font-bold mb-4">Calculadora de IPTU</h2>
+        <div>
+            <label for="valorTotal" class="block mb-2">Valor Total do IPTU:</label>
+            <input type="number" id="valorTotal" placeholder="Digite o valor total"
+                class="w-full px-3 py-2 border rounded-md border-gray-400">
         </div>
-        <div class="credit">
-            <p>Desenvolvido por <span>Victor Junqueira</span></a></p>
+        <label for="mesesFaltantes" class="block mb-2 mt-4">Meses Faltantes:</label>
+        <input type="number" id="mesesFaltantes" placeholder="Quantidade de meses para o ano acabar"
+            class="w-full px-3 py-2 border rounded-md border-gray-400">
+        <button onclick="calcularIPTU(event)" id="calculateButton"
+            class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600 w-full transition-all ease-in-out duration-300"
+            type="button">Calcular</button>
+        <div id="resultado" class="mt-4"></div>
+        <div class="mt-4">
+            <textarea placeholder="Anotações"
+                class="w-full px-3 py-2 border rounded-md border-gray-400 resize-none h-32"></textarea>
         </div>
-        <div class="credit credit-inovare">
-            <p>&copy; 2024 Inovare Imoveis. Todos os direitos reservados.</p>
+        <div class="text-center m-2 mx-auto">
+            <button onclick="window.print()"
+                class="flex items-center justify-center bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600 transition-all ease-in-out duration-300 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="inline-block w-4 h-4 mr-2 align-middle" class="">
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                    <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6" />
+                    <rect x="6" y="14" width="12" height="8" rx="1" />
+                </svg>
+                Imprimir
+            </button>
+        </div>
+    </form>
+    <div class="max-w-7xl mx-auto p-4 text-center border rounded">
+        <div class="mt-4 w-full">
+            <p>Desenvolvido por <span class="font-bold hover:underline text-center">Victor Junqueira</span></p>
+        </div>
+        <div class="mt-4">
+            <p>&copy; 2024 Inovare Imóveis. Todos os direitos reservados.</p>
         </div>
     </div>
     <script src="src/js/script.js"></script>
 </body>
 
 </html>
-
-<!-- Trocar para tailwind -->
-<!-- Adicionar botao de imprimir -->
-<!-- Limitar scroll a telas maiores (1024) -->
