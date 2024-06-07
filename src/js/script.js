@@ -1,16 +1,37 @@
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("calculateButton").addEventListener("click", calcularIPTU);
+});
+
 function calcularIPTU(event) {
     event.preventDefault();
 
-    var valorTotal = parseFloat(document.getElementById("valorTotal").value);
-    var mesesFaltantes = parseInt(document.getElementById("mesesFaltantes").value);
+    const valorTotal = parseFloat(document.getElementById("valorTotal").value);
+    const mesesFaltantes = parseInt(document.getElementById("mesesFaltantes").value);
+    const mensagemErro = document.getElementById("mensagemErro");
+    const resultado = document.getElementById("resultado");
+
+    mensagemErro.textContent = "";
+    resultado.textContent = "";
 
     if (isNaN(valorTotal) || isNaN(mesesFaltantes)) {
-        alert("Por favor, preencha todos os campos com valores numéricos.");
+        mensagemErro.textContent = "Por favor, preencha todos os campos com valores numéricos.";
         return;
     }
 
-    var iptuMensal = valorTotal / 12;
-    var valorDevido = iptuMensal * mesesFaltantes;
+    const iptuMensal = valorTotal / 12;
+    const valorDevido = iptuMensal * mesesFaltantes;
 
-    document.getElementById("resultado").innerHTML = "Resultado final: " + `<strong>R$ ${valorDevido.toFixed(2)}</strong>`;
+    resultado.innerHTML = `Resultado final: <strong>R$ ${valorDevido.toFixed(2)}</strong>`;
+}
+
+function handlePrint() {
+    const anotacoes = document.getElementById("anotacoes").value.trim();
+
+    if (!anotacoes) {
+        document.getElementById("anotacoes").classList.add("hidden-on-print");
+    } else {
+        document.getElementById("anotacoes").classList.remove("hidden-on-print");
+    }
+
+    window.print();
 }
