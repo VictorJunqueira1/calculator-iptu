@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IPTU</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Calculadora de IPTU</h2>
+        <label for="valorTotal">Valor Total do IPTU:</label>
+        <input type="number" id="valorTotal" placeholder="Digite o valor total">
+        <label for="mesesFaltantes">Meses Faltantes:</label>
+        <input type="number" id="mesesFaltantes" placeholder="Digite a quantidade de meses faltantes">
+        <button onclick="calcularIPTU()" id="calculateButton">Calcular</button>
+        <div id="resultado"></div>
+        <div class="anotations">
+            <textarea placeholder="Anotações"></textarea>
+        </div>
+        <div class="credit">
+            <p>Desenvolvido por <span>Victor Junqueira</span></a></p>
+        </div>
+        <div class="credit credit-inovare">
+            <p>&copy; 2024 Inovare Imoveis. Todos os direitos reservados.</p>
+        </div>
+    </div>
+    <script src="src/js/script.js"></script>
+</body>
+
+</html>
+
+<!-- Trocar para tailwind -->
+<!-- Adicionar botao de imprimir -->
+<!-- Limitar scroll a telas maiores (1024) -->
