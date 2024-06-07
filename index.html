@@ -25,15 +25,13 @@
 </head>
 
 <body class="bg-gray-200 mx-auto max-w-7xl px-4 md:px-0">
-    <form class="mx-auto max-w-xl mt-12 border border-slate-900 rounded-md p-6 bg-gray-100 shadow-md shadow-gray-400">
-        <h2 class="text-2xl font-bold mb-4">Calculadora de IPTU</h2>
+    <form class="mx-auto max-w-xl mt-12 border-2 border-slate-900 rounded-md p-6 bg-gray-100 shadow-md shadow-gray-200">
+        <h2 class="text-2xl mb-4 font-semibold">Calculadora de IPTU</h2>
         <div>
-            <label for="valorTotal" class="block mb-2">Valor Total do IPTU:</label>
-            <input type="number" id="valorTotal" placeholder="Digite o valor total"
-                class="w-full px-3 py-2 border rounded-md border-gray-400">
+            <label for="valorTotal" class="block mb-2 font-semibold">Valor Total do IPTU:</label>
+            <input type="number" id="valorTotal" placeholder="Digite o valor total" class="w-full px-3 py-2 border rounded-md border-gray-400">
         </div>
-
-        <label for="mesesFaltantes" class="block mb-2 mt-4">Meses Faltantes:</label>
+        <label for="mesesFaltantes" class="block mb-2 mt-4 font-semibold">Meses Faltantes:</label>
         <input type="number" id="mesesFaltantes" placeholder="Quantidade de meses para o ano acabar"
             class="w-full px-3 py-2 border rounded-md border-gray-400">
         <div id="mensagemErro" class="text-red-500 mt-2 no-print"></div>
@@ -42,8 +40,7 @@
             type="button">Calcular</button>
         <div id="resultado" class="mt-4"></div>
         <div class="mt-4">
-            <textarea id="anotacoes" placeholder="Anotações"
-                class="w-full px-3 py-2 border rounded-md border-gray-400 resize-none h-32"></textarea>
+            <textarea id="anotacoes" placeholder="Anotações" class="w-full px-3 py-2 border rounded-md border-gray-400 resize-none h-32"></textarea>
         </div>
         <div class="text-center m-2 mx-auto">
             <button onclick="handlePrint()"
@@ -59,7 +56,7 @@
             </button>
         </div>
     </form>
-    <div class="max-w-7xl mx-auto p-4 text-center border rounded">
+    <div class="max-w-7xl mx-auto p-4 text-center">
         <div class="mt-4 w-full no-print">
             <p>Desenvolvido por <span class="font-bold hover:underline text-center">Victor Junqueira</span></p>
         </div>
